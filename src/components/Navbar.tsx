@@ -61,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 ANDHRA PRINCE <span className="text-[#722F37]">PG</span>
               </div>
               <p className="text-[10px] sm:text-[11px] font-medium text-stone-500 tracking-wide truncate">
-                Luxury Co-Living & Homely Food
+                Luxury Stay & Homely Food
               </p>
             </div>
           </a>
@@ -80,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </nav>
 
           {/* Desktop Action Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2.5">
             <a
               href={`tel:${PG_INFO.phone}`}
               className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold text-stone-700 hover:text-[#722F37] bg-stone-50 hover:bg-stone-100 border border-stone-200 transition-all"
@@ -91,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
             <button
               onClick={onOpenBooking}
-              className="px-5 py-2.5 rounded-xl bg-[#722F37] hover:bg-[#5C232A] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#722F37]/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+              className="px-4 py-2 rounded-xl bg-[#722F37] hover:bg-[#5C232A] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#722F37]/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
             >
               Book Room
             </button>
@@ -126,6 +126,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </div>
 
             <div className="pt-2 border-t border-stone-100 flex flex-col gap-2">
+              <a
+                href={`https://wa.me/${PG_INFO.whatsapp}?text=Hi%2C%20I%20am%20interested%20in%20Andhra%20Prince%20PG.%20Please%20share%20room%20availability%20and%20details.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#25D366] text-white font-bold text-xs shadow-xs"
+              >
+                <MessageSquare className="w-4 h-4" />
+                <span>Chat on WhatsApp ({PG_INFO.phone})</span>
+              </a>
+
               <a
                 href={`tel:${PG_INFO.phone}`}
                 className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-stone-50 text-stone-800 font-bold text-xs border border-stone-200"

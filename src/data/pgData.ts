@@ -2,11 +2,12 @@ import { RoomType, AmenityItem, GalleryItem } from '../types';
 
 export const PG_INFO = {
   name: 'Andhra Prince PG',
-  tagline: 'Premium Co-Living & Homely Stay',
+  tagline: 'Premium Homely Stay & Food',
   subtitle: 'Executive accommodation with authentic 3-time homely meals, high-speed WiFi, modern lift, laundry, and zero brokerage.',
-  phone: '+91 98765 43210',
-  altPhone: '+91 98765 43211',
-  whatsapp: '919876543210',
+  phone: '+91 93540 58916',
+  altPhone: '+91 93540 58916',
+  whatsapp: '919354058916',
+  whatsappDisplay: '+91 93540 58916',
   email: 'contact@andhraprincepg.com',
   address: 'Andhra PG, Raipur Khadar, Sector 126 (Near Amity University), Noida, UP - 201313',
   city: 'Sector 126, Raipur Khadar, Noida',
@@ -22,91 +23,156 @@ export const PG_INFO = {
 };
 
 export const ROOMS_DATA: RoomType[] = [
+  // ================= PREMIUM STAY (2 OPTIONS) =================
   {
-    id: 'single-sharing',
-    name: 'Single Sharing Room',
+    id: 'premium-single',
+    name: 'Premium Single Sharing',
+    tier: 'premium',
     category: 'single',
-    title: 'Private Executive Suite',
+    title: 'Executive Private Luxury Suite',
     sharingCount: 1,
-    tagline: '100% Personal Space & Dedicated Workstation',
-    description: 'A completely private, premium room designed for professionals and students seeking peaceful living. Equipped with a comfortable orthopaedic bed, ergonomic study table, 3-door wardrobe, attached private washroom with geyser, and optional split AC.',
-    sizeSqFt: 180,
+    tagline: '100% Private Luxury & Dedicated Workstation',
+    description: 'An elite private master room crafted for senior working professionals and executives. Features a plush orthopaedic bed, ergonomic study desk with high-back chair, 2-door wardrobe with full mirror, attached modern bathroom with 24/7 hot water geyser, and whisper-silent inverter split AC.',
+    sizeSqFt: 190,
     hasAC: true,
-    badge: 'Executive Choice',
+    badge: '👑 Executive Luxury',
     images: [
-      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1540518614846-7ede433c4ef0?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80'
+      '/premium 1.jpg',
+      '/premium 2.jpg',
+      '/premium 3.jpeg'
     ],
     features: [
-      '100% Private Room (No Roommates)',
-      'Plush Bed with Orthopaedic Mattress',
-      'Ergonomic Work Desk & Executive Chair',
-      'Spacious Lockable 3-Door Wardrobe',
-      'Attached Modern Washroom with 24/7 Geyser',
-      'Split Air Conditioner & Ceiling Fan',
-      'High-Speed 300 Mbps Fiber WiFi Included',
-      '3-Times Homely Andhra & North Indian Meals'
+      '100% Private Room (Zero Roommates)',
+      'Plush King-Single Bed & Orthopaedic Mattress',
+      'Executive Work Desk & Ergonomic Chair',
+      'Spacious 2-Door Wardrobe with Locker',
+      'Attached Premium Tiled Bath with 24/7 Geyser',
+      'Inverter Split AC & Remote Ceiling Fan',
+      'Dedicated 300 Mbps Ultra-Fast Fiber WiFi',
+      '3-Times Homely North & South Indian Meals',
+      'Daily Room Housekeeping & Sanitization'
     ],
-    keyAmenities: ['Private Room', 'Attached Bath', 'Split AC', 'Work Desk', '3 Meals Included', '300 Mbps WiFi']
+    keyAmenities: ['100% Private', 'Luxury Attached Bath', 'Inverter Split AC', '2-Door Wardrobe', '3 Meals Included', '300 Mbps WiFi']
   },
   {
-    id: 'double-sharing',
-    name: 'Double Sharing Room',
+    id: 'premium-double',
+    name: 'Premium Double Sharing',
+    tier: 'premium',
     category: 'double',
-    title: 'Deluxe Twin Suite',
+    title: 'Deluxe Twin Executive Suite',
     sharingCount: 2,
-    tagline: 'Spacious & Comfortable Twin Living',
-    description: 'An airy, well-ventilated twin-sharing room featuring two independent solid-wood beds with premium mattresses, individual personal wardrobes with digital locks, two study desks, and an attached modern bathroom.',
-    sizeSqFt: 220,
+    tagline: 'Spacious & High-End Executive Twin Living',
+    description: 'A spacious, premium twin-sharing room with extra walking space, two separate solid-wood beds with spine-support mattresses, 2 sides new wooden wardrobes with personal keys, twin study stations, and an attached luxury bathroom.',
+    sizeSqFt: 230,
     hasAC: true,
-    badge: 'Most Popular',
+    badge: '⭐ Premium Twin',
     images: [
-      'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80'
+      '/premium 4.jpeg',
+      '/premium 5.jpeg',
+      '/premium 6.jpeg'
     ],
     features: [
-      '2 Separate Beds with Ortho Mattresses',
-      '2 Independent Lockable Wardrobes',
-      'Individual Study Desks & Reading Setup',
-      'Attached Clean Tiled Bathroom with Geyser',
-      'Split Inverter AC & High-Airflow Fans',
-      'Shoe Rack & Fresh Clean Bedding',
+      '2 Separate Solid-Wood Beds with Ortho Mattresses',
+      '2 Sides New Wooden Wardrobes with Keys',
+      'Dual Study Desks & Dedicated Reading Lights',
+      'Attached Designer Washroom with 24/7 Geyser',
+      'High-Efficiency Split Inverter AC',
+      'Balcony / Large Sunlit French Windows',
       '3-Times Homely Andhra & North Indian Meals',
-      'Daily Housekeeping & Room Sanitization'
+      'Daily Cleaning & Dedicated Laundry Service'
     ],
-    keyAmenities: ['Twin Sharing', 'Attached Bath', 'Split AC', '2 Wardrobes', '3 Meals Included', 'Daily Cleaning']
+    keyAmenities: ['Twin Sharing', 'Attached Luxury Bath', 'Split Inverter AC', '2 Wooden Wardrobes', '3 Meals Included', 'Laundry Access']
+  },
+
+  // ================= BUDGET FRIENDLY (3 OPTIONS) =================
+  {
+    id: 'budget-single',
+    name: 'Budget Single Sharing',
+    tier: 'budget',
+    category: 'single',
+    title: 'Smart Solo Budget Room',
+    sharingCount: 1,
+    tagline: 'Affordable Private Room with Homely Meals',
+    description: 'A cost-effective private single room providing complete privacy at an economical monthly rate. Comes with a single bed, personal wardrobe, study table, clean attached washroom with geyser, and full access to food and amenities.',
+    sizeSqFt: 150,
+    hasAC: true,
+    badge: '💡 Pocket Friendly Solo',
+    images: [
+      '/budget-pg/1.webp',
+      '/budget-pg/2.webp',
+      '/budget-pg/3.webp'
+    ],
+    features: [
+      'Private Single Room at Budget-Friendly Rate',
+      'Single Bed with Comfortable Mattress',
+      'Personal Lockable Steel/Wood Wardrobe',
+      'Attached Clean Washroom with Hot Water Geyser',
+      'Study Table & Chair Setup',
+      'AC & Air Cooler / Ventilation Options',
+      '3-Times Unlimited Homely Meals Included',
+      'Automatic Lift & Washing Machine Access'
+    ],
+    keyAmenities: ['Private Budget Room', 'Attached Washroom', 'AC / Cooler', 'Study Table', '3 Homely Meals', 'Lift & WiFi']
   },
   {
-    id: 'triple-sharing',
-    name: 'Triple Sharing Room',
-    category: 'triple',
-    title: 'Classic Comfort Suite',
-    sharingCount: 3,
-    tagline: 'Economical, Spacious & Fully Furnished',
-    description: 'A spacious and well-lit three-sharing room with ample natural sunlight, individual beds with storage, personal lockable wardrobes, attached bathroom with geyser, and high-speed fiber internet.',
-    sizeSqFt: 260,
+    id: 'budget-double',
+    name: 'Budget Double Sharing',
+    tier: 'budget',
+    category: 'double',
+    title: 'Standard Twin Sharing Room',
+    sharingCount: 2,
+    tagline: 'High-Value Twin Sharing for Students & Employees',
+    description: 'Our most popular budget choice for Amity students and Noida professionals. Offers two comfortable beds with mattresses, separate wardrobes with keys, study desks, attached bathroom with geyser, and 3-time hot meals.',
+    sizeSqFt: 200,
     hasAC: true,
-    badge: 'Best Value',
+    badge: '🔥 Best Budget Value',
     images: [
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1540518614846-7ede433c4ef0?auto=format&fit=crop&w=1200&q=80'
+      '/budget-pg/4.webp',
+      '/budget-pg/5.webp',
+      '/budget-pg/2.webp',
+      '/budget-pg/1.webp'
     ],
     features: [
-      '3 Comfortable Single Beds with Cushioned Mattresses',
-      '3 Separate Lockable Wardrobe Units',
-      'Attached Washroom with 24/7 Hot Water Geyser',
-      'Air Conditioner / Cool Air Ventilation',
-      'Dedicated Power Points near Every Bed',
-      'High-Speed 300 Mbps Dual-Band WiFi',
-      '3-Times Unlimited Homely Andhra Meals',
-      'Daily Dusting, Mopping & Garbage Clearance'
+      '2 Individual Beds with Cushioned Mattresses',
+      '2 Separate Lockable Storage Wardrobes',
+      'Attached Clean Washroom with 24/7 Geyser',
+      'AC / High Airflow Ventilation System',
+      'High-Speed 300 Mbps Fiber WiFi Included',
+      '3-Times Daily Homely North & South Indian Food',
+      'RO Drinking Water on Every Floor',
+      'Zero Brokerage & Transparent Rent'
     ],
-    keyAmenities: ['Triple Sharing', 'Attached Bath', 'AC/Non-AC', '3 Lockers', '3 Meals Included', 'Super Fast WiFi']
+    keyAmenities: ['Twin Sharing', 'Attached Bath', 'AC / Ventilation', '2 Lockers', '3 Meals Included', 'Zero Brokerage']
+  },
+  {
+    id: 'budget-triple',
+    name: 'Budget Triple Sharing',
+    tier: 'budget',
+    category: 'triple',
+    title: 'Classic Triple Sharing Room',
+    sharingCount: 3,
+    tagline: 'Maximum Cost Savings with Full Amenities',
+    description: 'An economical, well-ventilated 3-sharing room designed for budget-conscious students and trainees. Features 3 separate beds with storage, individual lockable wardrobe units, attached bathroom with geyser, and 3-time home-style meals.',
+    sizeSqFt: 250,
+    hasAC: true,
+    badge: '💰 Maximum Savings',
+    images: [
+      '/budget-pg/6.webp',
+      '/budget-pg/7.webp',
+      '/budget-pg/3.webp',
+      '/budget-pg/5.webp'
+    ],
+    features: [
+      '3 Separate Single Beds with Storage Mattresses',
+      '3 Independent Lockable Wardrobe Units',
+      'Attached Clean Bathroom with 24/7 Hot Water Geyser',
+      'AC / High-Airflow Ceiling Fans',
+      'Dedicated Power Points for Each Bed',
+      '300 Mbps Dual-Band WiFi & Lift Access',
+      '3-Times Unlimited Homely Andhra & North Indian Meals',
+      'Daily Cleaning & Free Laundry Usage'
+    ],
+    keyAmenities: ['Triple Sharing', 'Attached Bath', 'AC / Ventilation', '3 Lockers', '3 Meals Included', 'Super Fast WiFi']
   }
 ];
 
@@ -128,7 +194,7 @@ export const AMENITIES_LIST: AmenityItem[] = [
   {
     id: 'food',
     title: '3 Times Homely Food',
-    description: 'Unlimited authentic Andhra Mess & North Indian home-style breakfast, lunch, and dinner, plus special Sunday Hyderabadi Biryani feasts.',
+    description: 'Unlimited authentic Andhra Mess & North Indian home-style breakfast, lunch, and dinner, plus special Sunday feasts.',
     iconName: 'Utensils',
     badge: 'Authentic Taste'
   },
@@ -172,50 +238,80 @@ export const AMENITIES_LIST: AmenityItem[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: '1',
-    title: 'Executive Single AC Bedroom',
-    category: 'Rooms',
-    url: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80'
+    title: 'Budget Friendly PG Room Photo 1',
+    category: 'Budget Stay',
+    url: '/budget-pg/1.webp'
   },
   {
     id: '2',
-    title: 'Spacious Deluxe Twin Bedroom',
-    category: 'Rooms',
-    url: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80'
+    title: 'Budget Friendly PG Room Photo 2',
+    category: 'Budget Stay',
+    url: '/budget-pg/2.webp'
   },
   {
     id: '3',
-    title: 'Hygienic Andhra Mess & Dining Hall',
-    category: 'Dining',
-    url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80'
+    title: 'Budget Friendly PG Room Photo 3',
+    category: 'Budget Stay',
+    url: '/budget-pg/3.webp'
   },
   {
     id: '4',
-    title: 'Authentic 3-Time Homely Andhra Meals',
-    category: 'Food',
-    url: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=1200&q=80'
+    title: 'Budget Friendly PG Room Photo 4',
+    category: 'Budget Stay',
+    url: '/budget-pg/4.webp'
   },
   {
     id: '5',
-    title: 'Sunday Hyderabadi Dum Biryani Feast',
-    category: 'Food',
-    url: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1200&q=80'
+    title: 'Budget Friendly PG Room Photo 5',
+    category: 'Budget Stay',
+    url: '/budget-pg/5.webp'
   },
   {
     id: '6',
-    title: 'Clean Attached Bathroom with Geyser',
-    category: 'Bathrooms',
-    url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80'
+    title: 'Budget Friendly PG Room Photo 6',
+    category: 'Budget Stay',
+    url: '/budget-pg/6.webp'
   },
   {
     id: '7',
-    title: 'Modern Automatic Lift & Corridors',
-    category: 'Facilities',
-    url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80'
+    title: 'Budget Friendly PG Room Photo 7',
+    category: 'Budget Stay',
+    url: '/budget-pg/7.webp'
   },
   {
     id: '8',
-    title: 'Laundry Zone & Automatic Washing Machines',
-    category: 'Facilities',
-    url: 'https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?auto=format&fit=crop&w=1200&q=80'
+    title: 'Premium Executive Master Bedroom',
+    category: 'Premium Stay',
+    url: '/premium 1.jpg'
+  },
+  {
+    id: '9',
+    title: 'Premium Executive Bedroom Setup',
+    category: 'Premium Stay',
+    url: '/premium 2.jpg'
+  },
+  {
+    id: '10',
+    title: 'Premium Suite Room Interior',
+    category: 'Premium Stay',
+    url: '/premium 3.jpeg'
+  },
+  {
+    id: '11',
+    title: 'Premium Twin Sharing Bedroom',
+    category: 'Premium Stay',
+    url: '/premium 4.jpeg'
+  },
+  {
+    id: '12',
+    title: 'Premium Deluxe Living Room',
+    category: 'Premium Stay',
+    url: '/premium 5.jpeg'
+  },
+  {
+    id: '13',
+    title: 'Premium Executive Suite',
+    category: 'Premium Stay',
+    url: '/premium 6.jpeg'
   }
 ];

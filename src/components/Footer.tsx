@@ -59,19 +59,25 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
           {/* Contact Direct */}
           <div className="lg:col-span-4 space-y-3">
             <h4 className="text-xs font-black uppercase tracking-wider text-white">
-              Direct Contact & Support
+              Direct Contact & WhatsApp
             </h4>
-            <div className="space-y-2 text-xs text-stone-200">
+            <div className="space-y-2.5 text-xs text-stone-200">
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#F8D2D7] shrink-0" />
                 <a href={`tel:${PG_INFO.phone}`} className="hover:text-white transition-colors font-bold">
-                  {PG_INFO.phone}
+                  {PG_INFO.phone} (Calling Helpline)
                 </a>
               </p>
               <p className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#F8D2D7] shrink-0" />
-                <a href={`tel:${PG_INFO.altPhone}`} className="hover:text-white transition-colors">
-                  {PG_INFO.altPhone}
+                <MessageSquare className="w-4 h-4 text-[#25D366] shrink-0" />
+                <a
+                  href={`https://wa.me/${PG_INFO.whatsapp}?text=Hi%2C%20I%20am%20interested%20in%20Andhra%20Prince%20PG.%20Please%20share%20room%20availability%20and%20details.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:underline font-bold flex items-center gap-1.5"
+                >
+                  <span>WhatsApp: {PG_INFO.phone}</span>
+                  <span className="px-1.5 py-0.5 rounded bg-[#25D366] text-[10px] font-bold text-white leading-none">Chat Now</span>
                 </a>
               </p>
               <p className="flex items-center gap-2">
@@ -98,7 +104,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400">
-          <p>© {new Date().getFullYear()} Andhra Prince PG & Co-Living. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} Andhra Prince PG. All Rights Reserved.</p>
           <button
             onClick={scrollToTop}
             className="w-8 h-8 rounded-lg bg-[#3D141C] hover:bg-[#521C26] text-stone-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer border border-[#521C26]"

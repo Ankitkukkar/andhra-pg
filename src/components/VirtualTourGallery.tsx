@@ -6,7 +6,7 @@ export const VirtualTourGallery: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const categories = ['All', 'Rooms', 'Food', 'Dining', 'Facilities', 'Bathrooms'];
+  const categories = ['All', 'Budget Stay', 'Premium Stay'];
 
   const filteredItems = activeCategory === 'All'
     ? GALLERY_ITEMS
@@ -39,7 +39,7 @@ export const VirtualTourGallery: React.FC = () => {
             PG Photo Gallery
           </h2>
           <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-            Take a real photographic tour of our clean bedrooms, authentic mess dining, laundry area, and modern facilities.
+            Take a real photographic tour of our clean bedrooms, new wooden wardrobes, comfortable beds, and verified PG facilities.
           </p>
 
           {/* Category Filter Chips */}

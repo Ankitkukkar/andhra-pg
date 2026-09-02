@@ -9,7 +9,8 @@ import {
   Building2, 
   Train, 
   GraduationCap,
-  ShieldCheck
+  ShieldCheck,
+  MessageSquare
 } from 'lucide-react';
 import { PG_INFO } from '../data/pgData';
 
@@ -70,19 +71,25 @@ export const MapAndLocationSection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Direct Phone Numbers */}
+                {/* Direct Phone Numbers & WhatsApp */}
                 <div className="flex items-start gap-3.5">
                   <div className="w-10 h-10 rounded-xl bg-[#722F37]/10 border border-[#722F37]/20 flex items-center justify-center text-[#722F37] shrink-0 mt-0.5">
                     <Phone className="w-5 h-5" />
                   </div>
-                  <div>
-                    <span className="text-[11px] font-bold text-stone-500 block uppercase">Contact Numbers</span>
-                    <div className="flex flex-col gap-1 mt-0.5">
-                      <a href={`tel:${PG_INFO.phone}`} className="text-[#722F37] hover:underline font-bold">
-                        {PG_INFO.phone} (Main Helpline)
+                  <div className="space-y-1">
+                    <span className="text-[11px] font-bold text-stone-500 block uppercase">Contact & WhatsApp</span>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                      <a href={`tel:${PG_INFO.phone}`} className="text-[#722F37] hover:underline font-bold text-sm">
+                        {PG_INFO.phone}
                       </a>
-                      <a href={`tel:${PG_INFO.altPhone}`} className="text-stone-700 hover:underline">
-                        {PG_INFO.altPhone} (PG Warden & Manager)
+                      <a
+                        href={`https://wa.me/${PG_INFO.whatsapp}?text=Hi%2C%20I%20am%20interested%20in%20Andhra%20Prince%20PG.%20Please%20share%20room%20availability%20and%20location%20details.`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-bold shadow-xs transition-all w-fit"
+                      >
+                        <MessageSquare className="w-3.5 h-3.5" />
+                        <span>Direct WhatsApp</span>
                       </a>
                     </div>
                   </div>

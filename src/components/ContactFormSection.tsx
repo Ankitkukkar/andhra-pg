@@ -23,6 +23,7 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ prefille
     name: '',
     phone: '',
     email: '',
+    stayTier: 'premium',
     roomType: (prefilledRoom as any) || 'double',
     acPreference: 'ac',
     moveInDate: '',
@@ -37,14 +38,49 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ prefille
     if (!formData.name || !formData.phone) return;
 
     setLoading(true);
+
+    // Format full structured inquiry message for WhatsApp
+    const tierLabel = formData.stayTier === 'premium' ? '👑 Premium Stay' : formData.stayTier === 'budget' ? '💰 Budget Friendly' : 'Flexible / Any Tier';
+    
+    const sharingLabel = {
+      single: 'Single Sharing (Private)',
+      double: 'Double Sharing (Twin)',
+      triple: 'Triple Sharing (3 Persons)',
+      any: 'Any Available Room'
+    }[formData.roomType] || formData.roomType;
+
+    const messageLines = [
+      `*New PG Inquiry - Andhra Prince PG*`,
+      `👤 *Name:* ${formData.name}`,
+      `📞 *Phone:* ${formData.phone}`,
+      formData.email ? `📧 *Email:* ${formData.email}` : null,
+      `🏛️ *Category:* ${tierLabel}`,
+      `🛏️ *Room Sharing:* ${sharingLabel}`,
+      `❄️ *AC Preference:* ${formData.acPreference === 'ac' ? 'AC Room' : 'Non-AC Room'}`,
+      formData.moveInDate ? `📅 *Move-in Date:* ${formData.moveInDate}` : `📅 *Move-in Date:* Immediate / ASAP`,
+      formData.message ? `💬 *Requirement/Note:* ${formData.message}` : null,
+      `\n_Sent via Andhra Prince PG Website Contact Form_`
+    ].filter(Boolean).join('\n');
+
+    const whatsappUrl = `https://wa.me/${PG_INFO.whatsapp}?text=${encodeURIComponent(messageLines)}`;
+
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-    }, 600);
+      // Open WhatsApp directly with the filled info
+      window.open(whatsappUrl, '_blank');
+    }, 400);
   };
 
   const handleWhatsAppDirect = () => {
-    const text = `Hi Andhra Prince PG Team, my name is ${formData.name || 'a visitor'}. I am interested in booking / pricing for ${formData.roomType.toUpperCase()} Sharing Room (${formData.acPreference.toUpperCase()}). My expected move-in date is ${formData.moveInDate || 'this month'}. Please share details.`;
+    const sharingLabel = {
+      single: 'Single Sharing',
+      double: 'Double Sharing',
+      triple: 'Triple Sharing',
+      any: 'Any Available'
+    }[formData.roomType] || formData.roomType;
+
+    const text = `Hi Andhra Prince PG Team, my name is ${formData.name || 'a resident'}. I am interested in ${sharingLabel} (${formData.acPreference.toUpperCase()}). Move-in: ${formData.moveInDate || 'Immediate'}. Please share pricing and room photos.`;
     window.open(`https://wa.me/${PG_INFO.whatsapp}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -238,11 +274,32 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ prefille
                   </div>
                 </div>
 
-                {/* Preferred Room Type & AC Option */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* Stay Category & Preferred Room Sharing */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="space-y-1.5">
                     <label className="text-xs font-bold text-stone-700">
-                      Preferred Room Sharing
+                      Stay Category
+                    </label>
+                    <select
+                      value={formData.stayTier}
+                      onChange={(e) => {
+                        const newTier = e.target.value as any;
+                        setFormData({ 
+                          ...formData, 
+                          stayTier: newTier,
+                          roomType: newTier === 'premium' && formData.roomType === 'triple' ? 'double' : formData.roomType
+                        });
+                      }}
+                      className="w-full bg-[#FAF7F5] border border-stone-300 rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-hidden focus:border-[#722F37] focus:bg-white transition-colors"
+                    >
+                      <option value="premium">👑 1. Premium Stay</option>
+                      <option value="budget">💰 2. Budget Friendly</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-stone-700">
+                      Room Sharing Type
                     </label>
                     <select
                       value={formData.roomType}
@@ -251,7 +308,9 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ prefille
                     >
                       <option value="single">Single Sharing (100% Private)</option>
                       <option value="double">Double Sharing (Twin Sharing)</option>
-                      <option value="triple">Triple Sharing (3 Persons)</option>
+                      {formData.stayTier === 'budget' && (
+                        <option value="triple">Triple Sharing (3 Persons)</option>
+                      )}
                       <option value="any">Open to Any Available Room</option>
                     </select>
                   </div>
@@ -291,9 +350,12 @@ export const ContactFormSection: React.FC<ContactFormSectionProps> = ({ prefille
                   disabled={loading}
                   className="w-full py-4 px-6 rounded-xl bg-[#722F37] hover:bg-[#58111A] disabled:opacity-50 text-white font-bold text-sm uppercase tracking-wider shadow-lg shadow-[#722F37]/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>{loading ? 'Submitting Inquiry...' : 'Submit Contact Inquiry'}</span>
+                  <MessageSquare className="w-4 h-4 text-[#25D366]" />
+                  <span>{loading ? 'Opening WhatsApp...' : 'Submit Inquiry via WhatsApp'}</span>
                 </button>
+                <p className="text-[11px] text-stone-500 text-center">
+                  Your inquiry details will be instantly forwarded directly to our WhatsApp manager at <span className="font-semibold text-stone-700">+91 93540 58916</span>.
+                </p>
               </form>
             )}
 

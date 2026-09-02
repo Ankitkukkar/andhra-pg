@@ -28,7 +28,7 @@ export const ContactPricingModal: React.FC<ContactPricingModalProps> = ({ room, 
   if (!room) return null;
 
   const handleWhatsAppInquiry = () => {
-    const text = `Hi Andhra Prince PG Team, I want to know the pricing and availability for ${room.name} (${acChoice.toUpperCase()}). My name is ${name || 'Prospective Resident'} (Phone: ${phone || 'N/A'}). Expected move-in: ${moveDate || 'Immediate'}.`;
+    const text = `*Room Pricing Inquiry - Andhra Prince PG*\n🛏️ *Room:* ${room.name}\n❄️ *AC Choice:* ${acChoice.toUpperCase()}\n👤 *Name:* ${name || 'Prospective Resident'}\n📞 *Phone:* ${phone || 'N/A'}\n📅 *Move-in Date:* ${moveDate || 'Immediate'}\n\nPlease share current available bed rates, deposit details, and room photos.`;
     window.open(`https://wa.me/${PG_INFO.whatsapp}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -36,6 +36,7 @@ export const ContactPricingModal: React.FC<ContactPricingModalProps> = ({ room, 
     e.preventDefault();
     if (!name || !phone) return;
     setSubmitted(true);
+    handleWhatsAppInquiry();
   };
 
   return (
@@ -45,9 +46,14 @@ export const ContactPricingModal: React.FC<ContactPricingModalProps> = ({ room, 
         {/* Header */}
         <div className="p-5 sm:p-6 border-b border-stone-200 flex items-center justify-between bg-[#FAF7F5]">
           <div>
-            <span className="text-[10px] font-black uppercase tracking-wider text-[#722F37] bg-[#722F37]/10 px-2.5 py-0.5 rounded-full border border-[#722F37]/20">
-              Pricing & Availability
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] font-black uppercase tracking-wider text-[#722F37] bg-[#722F37]/10 px-2.5 py-0.5 rounded-full border border-[#722F37]/20">
+                {room.tier === 'premium' ? '👑 Premium Stay' : '💰 Budget Friendly'}
+              </span>
+              <span className="text-[10px] font-bold text-stone-500 uppercase">
+                Pricing & Availability
+              </span>
+            </div>
             <h3 className="text-xl font-black text-stone-950 font-heading mt-1">
               {room.name}
             </h3>
