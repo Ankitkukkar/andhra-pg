@@ -55,7 +55,7 @@ export const AmenitiesGrid: React.FC = () => {
             Premium Amenities Included
           </h2>
           <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-            Everything you need for a comfortable, productive, and hassle-free co-living experience is bundled into your stay.
+            Everything you need for a comfortable, productive, and hassle-free stay experience is bundled into your stay.
           </p>
         </div>
 
